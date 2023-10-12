@@ -3,7 +3,7 @@ import React from 'react';
 import MealItemForm from './MealItemForm';
 import styles from './MealItem.module.css';
 
-const MealItem = ({ name, description, price }) => {
+const MealItem = ({ id, name, description, price }) => {
   price = `$${price.toFixed(2)}`;
 
   return (
@@ -14,7 +14,7 @@ const MealItem = ({ name, description, price }) => {
         <div className={styles.price}>{price}</div>
       </div>
       <div>
-        <MealItemForm />
+        <MealItemForm id={id} />
       </div>
     </li>
   );

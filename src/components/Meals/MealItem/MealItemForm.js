@@ -3,13 +3,13 @@ import React from 'react';
 import Input from '../../UI/Input/Input';
 import styles from './MealItemForm.module.css';
 
-const MealItemForm = () => {
+const MealItemForm = ({ id }) => {
   return (
     <form className={styles.form}>
       <Input
         label='Amount'
         input={{
-          id: 'amount',
+          id: 'amount_' + id,
           type: 'number',
           min: '1',
           max: '5',
