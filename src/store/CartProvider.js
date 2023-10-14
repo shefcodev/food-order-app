@@ -25,7 +25,9 @@ const CartProvider = ({ children }) => {
     dispatchCartAction({ type: 'ADD', item });
   };
 
-  const removeItemFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (id) => {
+    dispatchCartAction({ type: 'REMOVE', id });
+  };
 
   const cartContext = {
     items: cartState.items,
