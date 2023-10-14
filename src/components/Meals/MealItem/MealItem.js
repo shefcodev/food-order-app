@@ -10,7 +10,7 @@ const MealItem = ({ id, name, description, price }) => {
   const formattedPrice = `$${price.toFixed(2)}`;
 
   const addToCartHandler = (amount) => {
-    addItem({ id, name, description, price, amount });
+    addItem({ id, name, price, amount });
   };
 
   return (

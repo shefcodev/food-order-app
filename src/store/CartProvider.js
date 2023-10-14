@@ -36,6 +36,8 @@ const CartProvider = ({ children }) => {
     removeItem: removeItemFromCartHandler,
   };
 
+  console.log(cartState.totalAmount);
+
   return (
     <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
   );
