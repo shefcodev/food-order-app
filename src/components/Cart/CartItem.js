@@ -21,4 +21,3 @@ const CartItem = ({ name, price, amount, onAdd, onRemove }) => {
 };
 
 export default CartItem;
- 

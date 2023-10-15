@@ -17,21 +17,21 @@ const Cart = ({ onClose }) => {
 
   const cartItems = (
     <ul className={styles['cart-items']}>
-      {items.map(({ id, name, amount, price }) => (
+      {items.map((item) => (
         <CartItem
-          key={id}
-          name={name}
-          price={price}
-          amount={amount}
-          onAdd={cartItemAddHandler.bind(null, id)}
-          onRemove={cartItemRemoveHandler.bind(null, id)}
+          key={item.id}
+          name={item.name}
+          price={item.price}
+          amount={item.amount}
+          onAdd={cartItemAddHandler.bind(null, item.id)}
+          onRemove={cartItemRemoveHandler.bind(null, item)}
         />
       ))}
     </ul>
   );
 
   return (
-    <Modal onClose={onClose}> 
+    <Modal onClose={onClose}>
       {cartItems}
       <div className={styles.total}>
         <span>Total Amount</span>
