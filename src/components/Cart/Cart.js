@@ -6,14 +6,18 @@ import Modal from '../UI/Modal/Modal';
 import styles from './Cart.module.css';
 
 const Cart = ({ onClose }) => {
-  const { items, totalAmount } = useContext(CartContext);
+  const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
 
   const formattedTotalAmount = `$${totalAmount.toFixed(2)}`;
   const hasItems = items.length > 0;
 
-  const cartItemAddHandler = (item) => {};
+  const cartItemAddHandler = (item) => {
+    addItem({ ...item, amount: 1 });
+  };
 
-  const cartItemRemoveHandler = (id) => {};
+  const cartItemRemoveHandler = (id) => {
+    removeItem(id);
+  };
 
   const cartItems = (
     <ul className={styles['cart-items']}>
@@ -23,8 +27,8 @@ const Cart = ({ onClose }) => {
           name={item.name}
           price={item.price}
           amount={item.amount}
-          onAdd={cartItemAddHandler.bind(null, item.id)}
-          onRemove={cartItemRemoveHandler.bind(null, item)}
+          onAdd={cartItemAddHandler.bind(null, item)}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
         />
       ))}
     </ul>
