@@ -23,7 +23,6 @@ const MealItemForm = ({ id, onAddToCart }) => {
     }
 
     onAddToCart(enteredAmountNumber);
-    console.log(enteredAmountNumber);
   };
 
   return (
