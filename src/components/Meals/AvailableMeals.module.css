@@ -18,7 +18,7 @@
 
 .MealsError {
   text-align: center;
-  color: red;
+  color: #8a2b06;
 }
 
 @keyframes meals-appear {
